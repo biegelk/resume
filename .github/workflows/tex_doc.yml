@@ -1,0 +1,21 @@
+# Github Action to ensure the document compiles without breaking errors.
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Run CI when pull requests are issued against the 'main' branch
+  pull_request:
+    branches: [ "main" ]
+
+# Sequence of events in the Action
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: compile document with pdflatex
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: biegel_resume.tex
