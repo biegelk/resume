@@ -113,10 +113,10 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #1} \hfill {#2} % Bold company name and date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+ {\bf\large #1} \hfill {#2} % Bold position name, and align date to the right
+ \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the institution and location line
   \\
-  {\em #3} \hfill {\em #4} % Italic job title and location
+  {\em #3} \hfill {\em #4} % Italic institution name and location
   }\smallskip
   \begin{itemize} % \textbullet used for bullets, no indentation
 %    \setlength{\itemsep}{-5pt}
