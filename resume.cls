@@ -22,9 +22,15 @@
 
 \LoadClass[11pt,letterpaper]{article} % Font size and paper type
 
+\usepackage{fontspec}
+\usepackage[default,extralight,semibold]{sourceserifpro}
+\usepackage[T1]{fontenc}
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
+
+% Set up Futura Light as a named font
+\newfontfamily{\futuralight}{FTN35}[Extension = .ttf, UprightFont = *]
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -32,10 +38,10 @@
 %	HEADINGS COMMANDS: Commands for printing name and address
 %----------------------------------------------------------------------------------------
 
-\def \name#1{\def\@name{#1}} % Defines the \name command to set name
+\def \name #1 {\def\@name{#1}} % Defines the \name command to set name
 \def \@name {} % Sets \@name to empty by default
 
-\def \addressSep {$\diamond$} % Set default address separator to a diamond
+\def \addressSep {\textbullet} % Set default address separator to a diamond
 
 % One, two or three address lines can be specified 
 \let \@addressone \relax
@@ -58,7 +64,7 @@
 \def \printaddress #1{
   \begingroup
     \def \\ {\addressSep\ }
-    \centerline{#1}
+    \futuralight \centerline{#1}
   \endgroup
   \par
   \addressskip
@@ -67,7 +73,7 @@
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
-    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
+    \hfil{\futuralight \MakeUppercase{\namesize \@name}}\hfil
     \nameskip\break
   \endgroup
 }
@@ -95,11 +101,11 @@
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
   \sectionskip
-  \MakeUppercase{\bf #1} % Section title
+  {\futuralight \MakeUppercase{\Large #1}} % Section title
   \sectionlineskip
   \hrule % Horizontal line
   \begin{list}{}{ % List for each individual item in the section
-    \setlength{\leftmargin}{1.5em} % Margin within the section
+    \setlength{\leftmargin}{0.0em} % Margin within the section
   }
   \item[]
 }{
@@ -111,21 +117,23 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #1} \hfill {#2} % Bold company name and date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-  \\
-  {\em #3} \hfill {\em #4} % Italic job title and location
-  }\smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+  {\futuralight {\large #1} \hfill {#2} % Increase font size of position name, and align date to the right
+    \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the institution and location line
+    \\
+    {#3} \hfill {#4} % Italic institution name and location
+    }\smallskip
+  }
+  \normalfont
+  \begin{itemize} % \textbullet used for bullets, no indentation
+%    \setlength{\itemsep}{-5pt}
   }{
-  \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
+  \end{itemize}
+  \vspace{0.8em} % Some space after the list of bullet points
 }
 
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
-\def\namesize{\huge} % Size of the name at the top of the document
+\def\namesize{\Huge} % Size of the name at the top of the document
 \def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
-\def\nameskip{\bigskip} % The space after your name at the top
+\def\nameskip{\smallskip} % The space after your name at the top
 \def\sectionskip{\medskip} % The space after the heading section
