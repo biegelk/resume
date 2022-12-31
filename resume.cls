@@ -23,10 +23,14 @@
 \LoadClass[11pt,letterpaper]{article} % Font size and paper type
 
 \usepackage{fontspec}
-\setmainfont{[FTN35.ttf]}
+\usepackage[default,extralight,semibold]{sourceserifpro}
+\usepackage[T1]{fontenc}
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
+
+% Set up Futura Light as a named font
+\newfontfamily{\futuralight}{FTN35}[Extension = .ttf, UprightFont = *]
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -60,7 +64,7 @@
 \def \printaddress #1{
   \begingroup
     \def \\ {\addressSep\ }
-    \centerline{#1}
+    \futuralight \centerline{#1}
   \endgroup
   \par
   \addressskip
@@ -69,7 +73,7 @@
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
-    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
+    \hfil{\futuralight \MakeUppercase{\namesize \@name}}\hfil
     \nameskip\break
   \endgroup
 }
@@ -97,7 +101,7 @@
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
   \sectionskip
-  \MakeUppercase{\Large\bf #1} % Section title
+  {\futuralight \MakeUppercase{\Large #1}} % Section title
   \sectionlineskip
   \hrule % Horizontal line
   \begin{list}{}{ % List for each individual item in the section
@@ -113,11 +117,13 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf\large #1} \hfill {#2} % Bold position name, and align date to the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the institution and location line
-  \\
-  {\em #3} \hfill {\em #4} % Italic institution name and location
-  }\smallskip
+  {\futuralight {\large #1} \hfill {#2} % Increase font size of position name, and align date to the right
+    \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the institution and location line
+    \\
+    {#3} \hfill {#4} % Italic institution name and location
+    }\smallskip
+  }
+  \normalfont
   \begin{itemize} % \textbullet used for bullets, no indentation
 %    \setlength{\itemsep}{-5pt}
   }{
