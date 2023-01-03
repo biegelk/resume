@@ -20,11 +20,9 @@
 
 \ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
 
-\LoadClass[11pt,letterpaper]{article} % Font size and paper type
+\LoadClass[10pt,letterpaper]{article} % Font size and paper type
 
 \usepackage{fontspec}
-\usepackage[default,extralight,semibold]{sourceserifpro}
-\usepackage[T1]{fontenc}
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
@@ -117,13 +115,13 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
-  {\futuralight {\large #1} \hfill {#2} % Increase font size of position name, and align date to the right
+  {\futuralight {\Large #1} \hfill {#2} % Increase font size of position name, and align date to the right
     \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the institution and location line
     \\
-    {#3} \hfill {#4} % Italic institution name and location
+    {\large #3} \hfill {\large #4} % Italic institution name and location
     }\smallskip
   }
-  \normalfont
+  \normalfont \small
   \begin{itemize} % \textbullet used for bullets, no indentation
 %    \setlength{\itemsep}{-5pt}
   }{
