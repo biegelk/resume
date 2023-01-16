@@ -5,7 +5,7 @@
 \documentclass{resume} % Use the custom resume.cls style
 
 \usepackage{hyperref}
-\usepackage[left=0.75in,top=0.5in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[left=0.75in,top=0.75in,right=0.75in,bottom=0.75in]{geometry} % Document margins
 
 \name{K a t i e \:\: B i e g e l} % Your name
 \address{(480)~$\cdot$~298~$\cdot$~9444 \\ kbiegel@anl.gov \\ github.com/biegelk} % Your phone number and email
@@ -19,61 +19,69 @@
 \begin{rSection}{Work Experience}
 
 \begin{rSubsection}{Graduate Researcher}{September 2018 -- present}{Argonne National Laboratory}{Lemont, IL}
-  \item Lead developer for the Agent-Based Capacity Expansion (ABCE) code
+  \item \textbf{Lead developer} for the Agent-Based Capacity Expansion (ABCE) code
     \begin{itemize}
       \setlength{\itemsep}{-3pt}
-      \item \textbf{Tools/methods: Python, Julia, SQLite, automated Excel templating}
-      \item Simulates asset-investment decision-making behavior of independent utility companies, each seeking to optimize its own portfolio's valuation subject to imperfect information and limited/evolving financial resources
-      \item Developed flexible data handling structures and interfaces to allow bidirectional ABCE coupling with external codes
-      \item Approved for open-source release on github under Apache License 2.0; currently in internal beta
+      \item \textbf{Skill highlights: Python, Julia, SQLite, automated Excel templating, git/software development}
+      \item Developing the ABCE code, which simulates generation asset investment decisions of independing utility companies competing in a wholesale electricity market
+        \begin{itemize}
+          \item Agents attempt to maximize their own generation portfolio's valuation via new construction projects and asset retirements
+          \item Agents make financial projections based on public information and their internal expectations about future events, using their own private models of future electricity market outcomes and full pro-forma company financial statements
+          \item Feasible behaviors are limited by agents' evolving ability to issue financing instruments, which are issued in real time and tracked on continuously-updated debt schedules
+        \end{itemize}
+      \item Developed flexible data structures and interfaces to allow bidirectional ABCE coupling with external codes
     \end{itemize}
 
-  \item Technical Analyst for the Civil Nuclear Credit (CNC) Program: developed an Excel operating profit model for all U.S. commercial nuclear reactor units, including impact of state and federal subsidy programs
+  \item \textbf{Technical analyst} for the Civil Nuclear Credit (CNC) Program
   \begin{itemize}
     \setlength{\itemsep}{-3pt}
-    \item \textbf{Tools/methods: Excel modeling}
+    \item \textbf{Skill highlights: Excel modeling, economic modeling, literature review, executive stakeholder communication}
+    \item Developed an Excel operating profit model (based solely on public information) for all U.S. commercial nuclear reactor units, to analyze the impacts of state and federal subsidy programs and variations in revenue and cost levels
     \item Researched and modeled state nuclear subsidy programs (CT, NY, NJ, IL) and federal production tax credit introduced in the Inflation Reduction Act (2022): structure, compensation levels, terms and conditions
-    \item Developed models for revenue streams and operating costs based on best available information for each individual unit, and conducted sensitivity analysis on assumptions to provide context and more robust conclusions
-    \item Wrote 12-page analysis summary report to CNC leadership's brief, to assist with preparations for the first CNC award cycle
-    \item Model based solely on publicly-available information
+    \item Performed sensitivity analyses on assumptions to provide context and more robust conclusions
+    \item Wrote 12-page analysis summary report to brief CNC leadership, to provide context before the first CNC award cycle
   \end{itemize}
 
-  \item Technoeconomic analyst: technoeconomic decision factors and impacts of transitioning coal power plants (CPPs) into nuclear power plants (NPPs)
+  \item \textbf{Technoeconomic analyst} for a Department of Energy coal-to-nuclear transitions report
   \begin{itemize}
     \setlength{\itemsep}{-3pt}
-    \item \textbf{Tools/methods: ABCE}
+    \item \textbf{Skill highlights: ABCE, literature review}
+    \item Developed conceptual and quantitative models of technoeconomic factors affecting feasibility of coal-to-nuclear conversion projects
     \item Developed exemplar project schedules for all project types to model the critical economic impacts of the "revenue gap" (unavoidable zero-revenue period between CPP shutdown and NPP startup on the same site, mandatory in some projects due to equipment refurbishment and/or site remediation)
     \item Developed models of activities and costs required to decommission CPPs and manage coal waste facilities
     \item Used ABCE to model decision drivers and utility firms' preferences among possible types of CPP-to-NPP conversion projects
-    \item Presented results to DOE leadership (August 2022) and at an ANS Winter Meeting panel session (November 2022)
   \end{itemize}
 
-  \item Other projects and publications
+  \item \textbf{Other projects and publications}
   % TODO: get dates and links for all of these
   \begin{itemize}
-    \item Impact of electric vehicle power demand and charging schedules on electricity markets and nuclear generators
-    \item February 2021 Electricity Blackouts and Natural Gas Shortages in Texas
+    \item Impact of electric vehicle power demand/charging schedules on electricity markets and nuclear generators
+    \item February 2021 electricity blackouts and natural gas shortages in Texas
     \item Economic impacts of nuclear power plant load-following capabilities
     \item Report on reuse of decommissioned nuclear assets
   \end{itemize}
 
 \end{rSubsection}
 
+%------------------------------------------------------------------------------
+
 \begin{rSubsection}{Energy Consulting Manager}{July 2015 -- July 2017}{PowerAdvocate, Inc.}{Boston, MA}
-  \setlength{\itemsep}{-5pt}
-  \item Developed comprehensive decision-making priority matrix for client considering replacing long-time, poorly-performing construction partner firm for capital asset build-out program of nearly \$10B over 10 years
+  \setlength{\itemsep}{-3pt}
+  \item Economic modeling and regulatory rate-case support for utility client capital investment planning process
   \begin{itemize}
-    \item Self-studied discounted cash flow valuation method and wrote valuation model of client firm, incorporating variable cost impacts from utilization of original and candidate construction partners
+    \item \textbf{Skill highlights: Excel modeling, construction cost modeling, executive stakeholder communication, regulatory affairs}
+    \item Developed valuation model of client firm and transmission infrastructure capital investment plan (\$10B over 10 years), to model client's contemplated transition from one prime construction contractor to a better-performing competitor, incorporating scenarios and sensitivity studies
     \item Researched regulatory and rate-setting processes in client's jurisdiction in order to estimate impacts of high construction cost unpredictability on regulatory burden
-    \item Authored evidentiary documents in defense of this and other work performed for the same client, which was submitted in support of client's rate case hearing; successfully disproved faulty opposing arguments and persuaded regulatory commission to decide in client's favor on points in question
+    \item Authored evidentiary documents in defense of this and other work performed for the same client, which led to the relevant ratemaking authority ruling in favor of the client's improved capital investment plan
+    \item Regularly presented results to, solicited feedback from, and cultivated buy-in with client executive-level point of contact
   \end{itemize}
 \end{rSubsection}
 
-%------------------------------------------------
+%------------------------------------------------------------------------------
 
 \begin{rSubsection}{Undergraduate Researcher}{June 2013 - June 2015}{Massachusetts Institute of Technology, Prof. Scott Kemp}{Cambridge, MA}
-  \setlength{\itemsep}{-5pt}
-  \item Developed MATLAB risk scenario model of new nuclear power plant construction projects to calculate the necessary expected profits from electricity sales needed to justify investment, considering project characteristics such as plant design, utility credit rating, and a historically-accurate spectrum of construction delays
+  \setlength{\itemsep}{-3pt}
+  \item Senior thesis: financial modeling of schedule escalation impacts on nuclear power plant construction projects
 \end{rSubsection}
 
 \end{rSection}
@@ -85,12 +93,12 @@
 
 \begin{rSection}{Education}
 
-\begin{rSubsection}{Doctoral Candidate in Nuclear Engineering}{anticipated: June 2023}{University of Wisconsin -- Madison, Department of Engineering Physics}{Madison, WI}
-  \item Research field: Agent-based modeling of electric power utility capital investment decisions
+\begin{rSubsection}{Doctoral Candidate in Nuclear Engineering}{August 2017 -- June 2023 (anticipated)}{University of Wisconsin -- Madison, Department of Engineering Physics}{Madison, WI}
+  \item Advisors: Paul P. H. Wilson (UW--Madison); Nicolas Stauff (Argonne National Laboratory)
 \end{rSubsection}
 
 \begin{rSubsection}{Bachelor of Science in Nuclear Science and Engineering}{June 2015}{Massachusetts Institute of Technology, Department of Nuclear Science and Engineering}{Cambridge, MA}
-  \item Senior thesis: construction project financial evaluation and risk management
+  \item Advisor: R. Scott Kemp (MIT)
 \end{rSubsection}
 
 \end{rSection}
@@ -103,15 +111,15 @@
 %	SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Skills}
+%\begin{rSection}{Skills}
 
-\begin{tabular}{ @{} >{\large}l @{\hspace{6ex}} l }
-Programming & Python; Julia; bash; git; Linux; SQLite \\
-MS Excel & modeling; data analysis; templating/UI/entry validation \\
-MS Powerpoint & technical/executive/layperson communication; infographics \\
-\end{tabular}
+%\begin{tabular}{ @{} >{\large}l @{\hspace{6ex}} l }
+%Programming & Python; Julia; bash; git; Linux; SQLite \\
+%MS Excel & modeling; data analysis; templating/UI/entry validation \\
+%MS Powerpoint & technical/executive/layperson communication; infographics \\
+%\end{tabular}
 
-\end{rSection}
+%\end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	EXAMPLE SECTION
