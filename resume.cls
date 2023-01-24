@@ -26,6 +26,8 @@
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
 
 % Set up Futura Light as a named font
 \newfontfamily{\futuralight}{FTN35}[Extension = .ttf, UprightFont = *]
