@@ -64,7 +64,7 @@
 \def \printaddress #1{
   \begingroup
     \def \\ {\addressSep\ }
-    \futuralight \centerline{#1}
+    \centerline{#1}
   \endgroup
   \par
   \addressskip
@@ -73,7 +73,7 @@
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
-    \hfil{\futuralight \MakeUppercase{\namesize \@name}}\hfil
+    \hfil{\MakeUppercase{\namesize \@name}}\hfil
     \nameskip\break
   \endgroup
 }
@@ -101,7 +101,7 @@
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
   \sectionskip
-  {\futuralight \MakeUppercase{\LARGE #1}} % Section title
+  {\MakeUppercase{\Large #1}} % Section title
   \sectionlineskip
   \hrule % Horizontal line
   \begin{list}{}{ % List for each individual item in the section
@@ -117,10 +117,10 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
-  {{\Large #1} \hfill {\large #2} % Increase font size of position name, and align date to the right
+  {{\large #1} \hfill {\large #2} % Increase font size of position name, and align date to the right
     \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the institution and location line
     \\
-    {\large #3} \hfill {\large #4} % Italic institution name and location
+    {\textit{#3}} \hfill {\textit{#4}} % Italic institution name and location
     }\smallskip
   }
   \normalfont \small
